@@ -56,6 +56,7 @@ module comvar
   real(sp) :: kt,ktcut
 
   ! masses (GeV)
+  integer(i1b) :: Mli
   real(sp), parameter :: M_pro = 0.93827208816d0
   real(sp), parameter :: M_neu = 0.93956542052d0
   real(sp), parameter :: M_ele = 0.00051d0

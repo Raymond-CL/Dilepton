@@ -32,6 +32,7 @@ contains
   read(u,*) acocut
   read(u,*) asymcut
   read(u,*) ktcut
+  read(u,*) Mli
   read(u,*) ncall1,itmax1
   read(u,*) ncall2,itmax2
   read(u,*) formfac

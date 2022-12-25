@@ -8,13 +8,20 @@ contains
   CME2 = CME*CME
   nprn = -1
   avgi = 0d0; sd = 0d0; chi2a = 0d0
-  m1 = m_ele; m2 = m_ele  ! set lepton masses
+  if(Mli.eq.1) then       ! set lepton masses
+    m1 = M_ele; m2 = M_ele
+  elseif(Mli.eq.2) then
+    m1 = M_mu;  m2 = M_mu
+  elseif(Mli.eq.3) then
+    m1 = M_tau; m2 = M_tau
+  else
+    call exit(13)   !m1 = 0d0;   m2 = 0d0
+  endif
   atomA = 208; atomZ = 82;  ! set nucleus info
   a0 = 0.7d0 /gevfm
   RA = 1.18 * atomA**(1d0/3d0) /gevfm
   rho0 = 3d0*atomA/4d0/PI/(RA**3)
-  bpmin = 0d0/gevfm 
-  bpmax = 3.6d0/gevfm
+  bpmin = 0d0/gevfm;    bpmax = 3.6d0/gevfm
   thpmin = (1d0-acocut)*PI; thpmax = (1d0+acocut)*PI
   end subroutine initialize 
   

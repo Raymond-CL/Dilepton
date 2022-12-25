@@ -27,15 +27,15 @@ program main
 
   ! initialize histogram 
   call initbook()
-  call newbook(1,.false.,'dsig/dqt',40,0.0,2.0)
-  call newbook(2,.false.,'dsig/dpt',40,4.0,14.0)
-  call newbook(3,.false.,'dsig/dkt',40,0.0,0.15)
-  call newbook(4,.false.,'dsig/dMll',40,4.0,45.0)
+  call newbook(1,.false.,'dsig/dqt',20,0.0,2.0)
+  call newbook(2,.false.,'dsig/dpt',20,4.0,14.0)
+  call newbook(3,.false.,'dsig/dkt',30,0.0,0.15)
+  call newbook(4,.false.,'dsig/dMll',20,4.0,45.0)
   call newbook(5,.false.,'dsig/daco',40,0.0,0.01)
   call newbook(6,.true.,'dsig/dxa',24,0.0001,0.1)
   call newbook(7,.true.,'dsig/dxb',24,0.0001,0.1)
-  call newbook(8,.false.,'dsig/dy1',40,-2.5,2.5)
-  call newbook(9,.false.,'dsig/dy2',40,-2.5,2.5)
+  call newbook(8,.false.,'dsig/dy1',20,-2.5,2.5)
+  call newbook(9,.false.,'dsig/dy2',20,-2.5,2.5)
 
   ! set integration limits
   call set_limits()
@@ -98,7 +98,7 @@ function func(dx,wgt)
 
   ! calculate diff. X-sectn
   func = diff_xsec()
-  func = func * (gevfm*1e2)**2 !130d0 / 5.138e-5
+  func = func * (gevfm*1e2)**2
 
   ! debug
   if((debug .or. isnan(func)) .and. fill_hist) then

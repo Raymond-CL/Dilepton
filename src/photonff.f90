@@ -20,7 +20,7 @@ contains
   implicit none
   real(sp) :: ffac
   real(sp), intent(in) :: k
-  real(sp), parameter :: Qs2 = 0.08d0**2
+  real(sp), parameter :: Qs2 = 0.08d0
   if(formfac) then
     ffac = 4d0*PI*rho0/atomA/k**3
     ffac = ffac / (1d0+a0**2*k**2)
