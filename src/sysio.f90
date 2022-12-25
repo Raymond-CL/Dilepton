@@ -118,7 +118,7 @@ contains
   write(u,*) 'total accepted events :',accevnt
   write(u,*) 'efficiency after cuts :',real(dble(accevnt)/dble(totevnt)*100d0),'%'
   write(u,*) 'total cross-section:',avgi
-  write(u,*) 'printing histograms:'
+  write(u,*) 'printing histograms to:',ofile
   write(u,*) '***********************************'
   u = getu()  ! print to file
   open(u,file=ofile,status='replace')
