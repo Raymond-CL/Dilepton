@@ -98,7 +98,6 @@ function func(dx,wgt)
 
   ! calculate diff. X-sectn
   func = diff_xsec()
-  func = func * (gevfm*1e2)**2
 
   ! debug
   if((debug .or. isnan(func)) .and. fill_hist) then

@@ -82,6 +82,7 @@ contains
   dxs = dxs * xf(sqrt(k1sq) , sqrt(kasq))
   dxs = dxs * xf(sqrt(k2sq) , sqrt(kbsq))
   dxs = dxs * bessel * sigma0 * dotcross
+  dxs = dxs * (gevfm*1e2)**2    ! GeV^-2 -> fm^2 -> micro-barn
   return
   end function diff_xsec
 
