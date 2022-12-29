@@ -6,7 +6,7 @@ contains
 
   subroutine initialize
   CME2 = CME*CME
-  nprn = -1
+  nprn = 0
   avgi = 0d0; sd = 0d0; chi2a = 0d0
   if(Mli.eq.1) then       ! set lepton masses
     m1 = M_ele; m2 = M_ele
@@ -19,10 +19,10 @@ contains
   endif
   atomA = 208; atomZ = 82;  ! set nucleus info
   a0 = 0.7d0 /gevfm
-  RA = 1.18 * atomA**(1d0/3d0) /gevfm
+  RA = 1.1d0 * atomA**(1d0/3d0) /gevfm
   rho0 = 3d0*atomA/4d0/PI/(RA**3)
-  bpmin = 0d0/gevfm;    bpmax = 3.6d0/gevfm
-  thpmin = (1d0-acocut)*PI; thpmax = (1d0+acocut)*PI
+  bpmin = 14d0/gevfm;    bpmax = 30d0/gevfm
+  thpmin = (0d0)*PI; thpmax = (2d0)*PI
   end subroutine initialize 
   
   subroutine set_limits

@@ -7,7 +7,7 @@
 0.06d0                      ! asymmetry cut
 0.15d0                      ! kperp cut
 2                           ! lepton mass (1=ele, 2=mu, 3=tau)
-200000000, 10               ! vegas warm up
-2000000000, 1               ! vegas end run
+200000, 10               ! vegas warm up
+2000000, 5               ! vegas end run
 .true.                      ! formfac (T=SL, F=Gauss)
 .false.                     ! debug flag

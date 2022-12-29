@@ -27,7 +27,7 @@ program main
 
   ! initialize histogram 
   call initbook()
-  call newbook(1,.false.,'dsig/dqt',20,0.0,2.0)
+  call newbook(1,.false.,'dsig/dqt',40,0.0,0.2)
   call newbook(2,.false.,'dsig/dpt',20,4.0,14.0)
   call newbook(3,.false.,'dsig/dkt',30,0.0,0.15)
   call newbook(4,.false.,'dsig/dMll',20,4.0,45.0)
@@ -92,7 +92,7 @@ function func(dx,wgt)
   ! set cuts
   !if(qt .ge. pt) return
   !if(aco .ge. acocut) return
-  if(asym .ge. asymcut) return
+  !if(asym .ge. asymcut) return
   !if(kt .ge. ktcut) return
   if((Mll .le. Mllmin) .or. (Mll .ge. Mllmax)) return
 
