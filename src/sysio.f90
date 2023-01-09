@@ -29,6 +29,7 @@ contains
   read(u,*) ylmin,ylmax
   read(u,*) ktmin,ktmax
   read(u,*) Mllmin,Mllmax
+  read(u,*) bpmin,bpmax
   read(u,*) atomA,atomZ
   read(u,*) acocut
   read(u,*) asymcut

@@ -4,6 +4,17 @@ module comvar
   implicit none
   public
  
+  ! conversion units
+  real(sp), parameter :: planck = 6.62607015d-34    ! Planck constant (J.s)
+  real(sp), parameter :: planckbar = planck/twoPI   ! reduced Planck (J.s)
+  real(sp), parameter :: charge = 1.602176634d-19   ! chrg mag (J/eV)
+  real(sp), parameter :: hbar = planckbar/charge    ! hbar (eV.s)
+  real(sp), parameter :: light = 299792458d0        ! light speed (m/s)
+  real(sp), parameter :: hbarc = hbar*light         ! conversion unit (eV.m)
+  real(sp), parameter :: giga = 1d+9
+  real(sp), parameter :: femto = 1d-15
+  real(sp), parameter :: gevfm = hbarc/giga/femto   ! common conversion (GeV.fm)
+
   ! temporary test variables
   real    :: tempr1,tempr2
   integer :: tempi1,tempi2
@@ -43,7 +54,8 @@ module comvar
 
   ! nucleus info
   integer(i2b) :: atomA,atomZ
-  real(sp) :: RA,rho0,a0
+  real(sp) :: RA,rho0
+  real(sp), parameter :: a0 = 1d0/sqrt(2d0) /gevfm !~0.71 fm
 
   ! impact parameter
   real(sp) :: bpmin,bp,bpmax
@@ -67,17 +79,6 @@ module comvar
   ! coupling 
   real(sp), parameter :: alphae = 1d0/137d0
   real(sp) :: alphas
-
-  ! conversion units
-  real(sp), parameter :: planck = 6.62607015d-34    ! Planck constant (J.s)
-  real(sp), parameter :: planckbar = planck/twoPI   ! reduced Planck (J.s)
-  real(sp), parameter :: charge = 1.602176634d-19   ! chrg mag (J/eV)
-  real(sp), parameter :: hbar = planckbar/charge    ! hbar (eV.s)
-  real(sp), parameter :: light = 299792458d0        ! light speed (m/s)
-  real(sp), parameter :: hbarc = hbar*light         ! conversion unit (eV.m)
-  real(sp), parameter :: giga = 1d+9
-  real(sp), parameter :: femto = 1d-15
-  real(sp), parameter :: gevfm = hbarc/giga/femto   ! common conversion (GeV.fm)
 
   ! vegas
   integer(i4b) :: ncall1,itmax1

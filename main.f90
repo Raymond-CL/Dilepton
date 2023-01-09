@@ -92,15 +92,15 @@ function func(dx,wgt)
   ! set cuts
   !if(qt .ge. pt) return
   !if(aco .ge. acocut) return
-  !if(asym .ge. asymcut) return
+  if(asym .ge. asymcut) return
   !if(kt .ge. ktcut) return
-  !if((Mll .le. Mllmin) .or. (Mll .ge. Mllmax)) return
+  if((Mll .le. Mllmin) .or. (Mll .ge. Mllmax)) return
 
   ! calculate diff. X-sectn
   func = diff_xsec()
 
   ! debug
-  if((debug .or. isnan(func)) .and. fill_hist) then
+  if(isnan(func) .or. (debug .and. fill_hist)) then
     call print_debug_info()
   endif
 

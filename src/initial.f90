@@ -17,10 +17,9 @@ contains
   else
     call exit(13)   !m1 = 0d0;   m2 = 0d0
   endif
-  a0 = 1d0/sqrt(2d0) /gevfm
+  bpmin = bpmin /gevfm;    bpmax = bpmax /gevfm
   RA = 1.13d0 * atomA**(1d0/3d0) /gevfm
   rho0 = 3d0*atomA/4d0/PI/(RA**3)
-  bpmin = 15d0/gevfm;    bpmax = 100d0/gevfm
   thpmin = (1d0-acocut)*PI; thpmax = (1d0+acocut)*PI
   end subroutine initialize 
   
