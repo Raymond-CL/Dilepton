@@ -29,6 +29,7 @@ contains
   read(u,*) ylmin,ylmax
   read(u,*) ktmin,ktmax
   read(u,*) Mllmin,Mllmax
+  read(u,*) atomA,atomZ
   read(u,*) acocut
   read(u,*) asymcut
   read(u,*) ktcut
@@ -46,21 +47,24 @@ contains
   write(u,*) '***********************************'
   write(u,*) '     dilepton photo-production     '
   write(u,*) 'Phys. Rev. Lett. 122, 132301 (2019)'
-  write(u,*) 'Phys. Rev. D 102, 094013 (2020)    '
+  write(u,*) 'Phys. Rev. D     102, 094013 (2020)'
   write(u,*) '***********************************'
   write(u,*) 'program compiled by:',compiler_version()
   !write(u,*) 'with compiler options:',compiler_options()
   write(u,*) 'kinematics:'
   write(u,*) '- center of mass energy per nucleon:',CME
-  write(u,*) '- lepton pt range:',ptmin, '< pt(GeV)   <',ptmax
-  write(u,*) '- lepton yl range:',ylmin, '< yl(GeV)   <',ylmax
-  write(u,*) '- photon kt range:',ktmin, '< kt(GeV)   <',ktmax
-  write(u,*) '- inv. mass range:',Mllmin,'< Mll(GeV)  <',Mllmax
+  write(u,*) '- lepton pt range:',ptmin, '< pt (GeV)  <',ptmax
+  write(u,*) '- lepton yl range:',ylmin, '< yl (GeV)  <',ylmax
+  write(u,*) '- photon kt range:',ktmin, '< kt (GeV)  <',ktmax
+  write(u,*) '- inv. mass range:',Mllmin,'< Mll (GeV) <',Mllmax
+  write(u,*) '- impact bp range:',bpmin *gevfm, '< bp ( fm ) <',bpmax *gevfm
   write(u,*) '- impact bp range:',bpmin, '< bp(1/GeV) <',bpmax
   write(u,*) '- lepton masses(GeV):',m1,m2
   write(u,*) 'nucleus info:'
   write(u,*) '- mass:',int(atomA,2),', charge:',int(atomZ,2)
+  write(u,*) '- Yukawa pot. rng (  fm  ):',a0 *gevfm
   write(u,*) '- Yukawa pot. rng (GeV^-1):',a0
+  write(u,*) '- nucleus radius  (  fm  ):',RA *gevfm
   write(u,*) '- nucleus radius  (GeV^-1):',RA
   write(u,*) '- nucleus density (GeV^+3):',rho0
   write(u,*) 'kinematics cuts:'
@@ -118,7 +122,7 @@ contains
   write(u,*) 'total generated events:',totevnt
   write(u,*) 'total accepted events :',accevnt
   write(u,*) 'efficiency after cuts :',real(dble(accevnt)/dble(totevnt)*100d0),'%'
-  write(u,*) 'total cross-section:',avgi
+  write(u,*) 'total cross-section   :',avgi
   write(u,*) 'printing histograms to:',ofile
   write(u,*) '***********************************'
   u = getu()  ! print to file
@@ -126,8 +130,8 @@ contains
   write(u,*) 'total generated events:',totevnt
   write(u,*) 'total accepted events :',accevnt
   write(u,*) 'efficiency after cuts :',real(dble(accevnt)/dble(totevnt)*100d0),'%'
-  write(u,*) 'total cross-section:',avgi
-  write(u,*) 'printing histograms:',new_line('a')
+  write(u,*) 'total cross-section   :',avgi
+  write(u,*) 'printing histograms   :',new_line('a')
   call printbook(u)
   close(u)
   end subroutine print_results

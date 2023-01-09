@@ -1,8 +1,9 @@
 5020d0                      ! Center of mass energy per nucleon
 4d0, 25d0                   ! lepton pt range
 -2.4d0, +2.4d0              ! lepton rapidity range
-0d0, 1.5d0                  ! photon kt range
+0d0, 1d0                    ! photon kt range
 4d0, 45d0                   ! invariant mass range
+207, 82                     ! atomic mass and num (A,Z)
 0.01d0                      ! acoplanarity cut
 0.06d0                      ! asymmetry cut
 0.15d0                      ! kperp cut

@@ -28,14 +28,14 @@ program main
   ! initialize histogram 
   call initbook()
   call newbook(1,.false.,'dsig/dqt',40,0.0,0.2)
-  call newbook(2,.false.,'dsig/dpt',20,4.0,14.0)
+  !call newbook(2,.false.,'dsig/dpt',20,4.0,14.0)
   call newbook(3,.false.,'dsig/dkt',30,0.0,0.15)
-  call newbook(4,.false.,'dsig/dMll',20,4.0,45.0)
+  !call newbook(4,.false.,'dsig/dMll',20,4.0,45.0)
   call newbook(5,.false.,'dsig/daco',40,0.0,0.01)
-  call newbook(6,.true.,'dsig/dxa',24,0.0001,0.1)
-  call newbook(7,.true.,'dsig/dxb',24,0.0001,0.1)
-  call newbook(8,.false.,'dsig/dy1',20,-2.5,2.5)
-  call newbook(9,.false.,'dsig/dy2',20,-2.5,2.5)
+  !call newbook(6,.true.,'dsig/dxa',24,0.0001,0.1)
+  !call newbook(7,.true.,'dsig/dxb',24,0.0001,0.1)
+  !call newbook(8,.false.,'dsig/dy1',20,-2.5,2.5)
+  !call newbook(9,.false.,'dsig/dy2',20,-2.5,2.5)
 
   ! set integration limits
   call set_limits()
@@ -94,7 +94,7 @@ function func(dx,wgt)
   !if(aco .ge. acocut) return
   !if(asym .ge. asymcut) return
   !if(kt .ge. ktcut) return
-  if((Mll .le. Mllmin) .or. (Mll .ge. Mllmax)) return
+  !if((Mll .le. Mllmin) .or. (Mll .ge. Mllmax)) return
 
   ! calculate diff. X-sectn
   func = diff_xsec()
@@ -108,14 +108,14 @@ function func(dx,wgt)
   if(fill_hist) then
     accevnt = accevnt + 1
     call fillbook(1, qt, func*wgt/itmax2)
-    call fillbook(2, pt, func*wgt/itmax2)
+    !call fillbook(2, pt, func*wgt/itmax2)
     call fillbook(3, kt, func*wgt/itmax2)
-    call fillbook(4, Mll, func*wgt/itmax2)
+    !call fillbook(4, Mll, func*wgt/itmax2)
     call fillbook(5, aco, func*wgt/itmax2)
-    call fillbook(6, xa, func*wgt/itmax2)
-    call fillbook(7, xb, func*wgt/itmax2)
-    call fillbook(8, y1, func*wgt/itmax2)
-    call fillbook(9, y2, func*wgt/itmax2)
+    !call fillbook(6, xa, func*wgt/itmax2)
+    !call fillbook(7, xb, func*wgt/itmax2)
+    !call fillbook(8, y1, func*wgt/itmax2)
+    !call fillbook(9, y2, func*wgt/itmax2)
   endif
 
   return

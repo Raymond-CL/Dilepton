@@ -10,7 +10,7 @@ contains
   implicit none
   real(sp) :: xf
   real(sp), intent(in) :: k,kp
-  xf = atomZ*atomZ*alphae/PI
+  xf = atomZ*atomZ*alphae/PI/PI
   xf = xf * ffac(k)/k/k * ffac(kp)/kp/kp
   return
   end function xf

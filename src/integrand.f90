@@ -76,7 +76,7 @@ contains
   use photonff
   real(sp) :: dxs
   real(sp) :: bessel,sigma0
-  bessel = bp * bessel_j0(k1ka*bp) / twoPI
+  bessel = bp * bessel_j0(k1ka*bp) !/ twoPI
   sigma0 = 2d0 * alphae**2 / mans / mans * (mant/manu + manu/mant)
   dxs = p1t * p2t * k1t * kat
   dxs = dxs * xf(sqrt(k1sq) , sqrt(kasq))
